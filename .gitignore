@@ -1,0 +1,37 @@
+# =============================================================================
+# Rahasia lokal — JANGAN pernah di-commit
+# =============================================================================
+# Kunci API asli cukup disimpan di salah satu tempat ini:
+#   1. variabel lingkungan Windows:  setx OPENROUTER_API_KEY "sk-or-..."
+#      (lalu dipakai lewat ${OPENROUTER_API_KEY:} di application.properties)
+#   2. berkas application-local.properties (di-ignore di bawah), dijalankan dengan
+#      --spring.profiles.active=local
+application-local.properties
+application-local.yml
+application-local.yaml
+*-local.properties
+.env
+
+# =============================================================================
+# IntelliJ IDEA
+# =============================================================================
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# =============================================================================
+# Maven / Java
+# =============================================================================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+*.class
+*.log
+
+# =============================================================================
+# Sistem operasi
+# =============================================================================
+Thumbs.db
+Desktop.ini
+.DS_Store
