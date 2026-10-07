@@ -25,7 +25,7 @@ public class PaymentTools {
 
         return paymentRestClient
                 .get()
-                .uri("/api/health")
+                .uri("/actuator/health")
                 .retrieve()
                 .body(String.class);
     }
