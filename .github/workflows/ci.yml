@@ -10,12 +10,8 @@ permissions:
 
 jobs:
   test:
-    name: test (${{ matrix.module }})
+    name: mvn test (all modules)
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        module: [ payment-api, payment-mcp, payment-agent ]
 
     steps:
       - name: Checkout
@@ -28,6 +24,5 @@ jobs:
           java-version: '17'
           cache: maven
 
-      - name: Run tests (${{ matrix.module }})
-        working-directory: ${{ matrix.module }}
+      - name: Run tests
         run: mvn -B --no-transfer-progress test
