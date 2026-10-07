@@ -20,31 +20,23 @@ public class PaymentController {
     private final PaymentService paymentService;
 
     @GetMapping("/{orderId}")
-    public Payment getPayment(
-            @PathVariable String orderId) {
-
+    public Payment getPayment(@PathVariable String orderId) {
         return paymentService.getPayment(orderId);
     }
 
     @GetMapping("/{orderId}/callbacks")
-    public List<PaymentCallback> getCallbacks(
-            @PathVariable String orderId) {
-
-        return paymentService
-                .getCallbacks(orderId);
+    public List<PaymentCallback> getCallbacks(@PathVariable String orderId) {
+        return paymentService.getCallbacks(orderId);
     }
 
     @GetMapping("/failed/count")
     public long countFailedTransaction() {
-
-        return paymentService
-                .countFailedTransaction();
+        return paymentService.countFailedTransaction();
     }
 
 
     @GetMapping("/payment/info")
     public List<Payment> getPaymentInfo() {
-
         return paymentService.getPaymentInfo();
     }
 }
